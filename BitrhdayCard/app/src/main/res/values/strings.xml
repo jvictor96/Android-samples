@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Bitrhday Card</string>
+    <string name="birthday_message">Happy Birthday %1$s!</string>
+    <string name="footer">From %1$s!</string>
 </resources>
