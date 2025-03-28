@@ -1,0 +1,3 @@
+/home/josevictor/Documents/Android-samples/ClickCounter/app/src/main/cpp/CMakeFiles/native-renderer.dir
+/home/josevictor/Documents/Android-samples/ClickCounter/app/src/main/cpp/CMakeFiles/edit_cache.dir
+/home/josevictor/Documents/Android-samples/ClickCounter/app/src/main/cpp/CMakeFiles/rebuild_cache.dir

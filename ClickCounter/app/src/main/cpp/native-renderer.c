@@ -9,8 +9,8 @@ static EGLContext context;
 static EGLConfig config;
 
 JNIEXPORT void JNICALL
-Java_com_example_bitrhdaycard_GLRenderer_init(JNIEnv *env, jobject thiz, jobject surfaceObj) {
-    ANativeWindow *window = ANativeWindow_fromSurface(env, surfaceObj);
+Java_com_example_clickcounter_GLRenderer_init(JNIEnv *env, jobject thiz, jobject surface) {
+    ANativeWindow *window = ANativeWindow_fromSurface(env, surface);
     display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
     eglInitialize(display, NULL, NULL);
 
@@ -35,14 +35,14 @@ Java_com_example_bitrhdaycard_GLRenderer_init(JNIEnv *env, jobject thiz, jobject
 }
 
 JNIEXPORT void JNICALL
-Java_com_example_bitrhdaycard_GLRenderer_drawFrame(JNIEnv *env, jobject thiz) {
+Java_com_example_clickcounter_GLRenderer_drawFrame(JNIEnv *env, jobject thiz) {
     glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     eglSwapBuffers(display, surface);
 }
 
 JNIEXPORT void JNICALL
-Java_com_example_bitrhdaycard_GLRenderer_handleTouch(JNIEnv *env, jobject thiz, jfloat x, jfloat y) {
+Java_com_example_clickcounter_GLRenderer_handleTouch(JNIEnv *env, jobject thiz, jfloat x, jfloat y, jfloat screenWidth, jfloat screenHeight) {
     // Handle touch input in native code, for example:
     // Convert touch coordinates to OpenGL normalized coordinates (e.g., [0, 1])
     float normalizedX = x / screenWidth;  // screenWidth should be passed/set in native code

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libnative-renderer.so -o libnative-renderer.so "CMakeFiles/native-renderer.dir/native-renderer.c.o"  -llog-lib-NOTFOUND -landroid-lib-NOTFOUND -lEGL -lGLESv3 

@@ -49,38 +49,10 @@ class GLRenderer(context: Context) : SurfaceView(context), SurfaceHolder.Callbac
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        super.onTouchEvent(event)
+        val x = event.x
+        val y = event.y
 
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                setBackgroundColor(PRESSED_COLOR)
-                return true
-            }
-
-            MotionEvent.ACTION_UP -> {
-                setBackgroundColor(NORMAL_COLOR)
-
-                // For this particular app we want the main work to happen
-                // on ACTION_UP rather than ACTION_DOWN. So this is where
-                // we will call performClick().
-                performClick()
-                return true
-            }
-        }
-        return false
-    }
-
-    // Because we call this from onTouchEvent, this code will be executed for both
-    // normal touch events and for when the system calls this using Accessibility
-    override fun performClick(): Boolean {
-        super.performClick()
-
-        launchMissile()
-
+        handleTouch(x, y)  // Pass touch coordinates to native C function
         return true
-    }
-
-    private fun launchMissile() {
-        Toast.makeText(context, "Missile launched", Toast.LENGTH_SHORT).show()
     }
 }
